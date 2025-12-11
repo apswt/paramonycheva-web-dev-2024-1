@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - ОБЖОРКИН</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="lunch-style.css">
+</head>
+<body>
+    <header>
+        <h1>ОБЖОРКИН</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="lunch.html" class="active">Собрать ланч</a>
+            <a href="#orders">Заказы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="soups">
+            <h2>Выберите суп</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="борщ.jpg" alt="Борщ">
+                    <p class="price">180 ₽</p>
+                    <p class="name">Борщ</p>
+                    <p class="weight">300 грамм</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="грибной.jpg" alt="Грибной крем-суп">
+                    <p class="price">180 ₽</p>
+                    <p class="name">Грибной крем-суп</p>
+                    <p class="weight">300 грамм</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="куриный.jpg" alt="Куриный суп">
+                    <p class="price">150 ₽</p>
+                    <p class="name">Куриный суп</p>
+                    <p class="weight">300 грамм</p>
+                    <button>Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-course">
+            <h2>Выберите основное блюдо</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="бестро.jpg" alt="Бефстроганов с гречкой">
+                    <p class="price">250 ₽</p>
+                    <p class="name">Бефстроганов с гречкой</p>
+                    <p class="weight">250 грамм</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="карбонара.jpg" alt="Карбонара">
+                    <p class="price">230 ₽</p>
+                    <p class="name">Карбонара</p>
+                    <p class="weight">250 грамм</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="контент.jpg" alt="Куриные котлеты с пюре">
+                    <p class="price">185 ₽</p>
+                    <p class="name">Куриные котлеты с пюре</p>
+                    <p class="weight">300 грамм</p>
+                    <button>Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks">
+            <h2>Выберите напиток</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="чай.jpg" alt="Чай в ассортименте">
+                    <p class="price">50 ₽</p>
+                    <p class="name">Чай в ассортименте</p>
+                    <p class="weight">200 мл</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="мол кокте.jpg" alt="Молочный коктейль">
+                    <p class="price">200 ₽</p>
+                    <p class="name">Молочный коктейль в ассортименте</p>
+                    <p class="weight">300 мл</p>
+                    <button>Добавить</button>
+                </div>
+                <div class="menu-item">
+                    <img src="лимонады.jpg" alt="Лимонад">
+                    <p class="price">100 ₽</p>
+                    <p class="name">Лимонад в ассортименте</p>
+                    <p class="weight">300 мл</p>
+                    <button>Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="make_order">
+            <h2>Сделать заказ</h2>
+            <form method="POST" action="https://httpbin.org/post">
+                <div class="order-container">
+                    <div class="your-order">
+                        <h3>Ваш заказ</h3>
+
+                        <label for="soup-select">Суп</label>
+                        <select name="soup" id="soup-select" required>
+                            <option value="">-- Выберите суп --</option>
+                            <option value="borsch">Борщ</option>
+                            <option value="mushroom-cream">Грибной крем-суп</option>
+                            <option value="chicken-soup">Куриный суп</option>
+                        </select>
+
+                        <label for="main-select">Основное блюдо</label>
+                        <select name="main" id="main-select" required>
+                            <option value="">-- Выберите основное блюдо --</option>
+                            <option value="beef-buckwheat">Бефстроганов с гречкой</option>
+                            <option value="carbonara">Карбонара</option>
+                            <option value="chicken-cutlets">Куриные котлеты с пюре</option>
+                        </select>
+
+                        <label for="drink-select">Напиток</label>
+                        <select name="drink" id="drink-select" required>
+                            <option value="">-- Выберите напиток --</option>
+                            <option value="tea">Чай в ассортименте</option>
+                            <option value="milkshake">Молочный коктейль в ассортименте</option>
+                            <option value="lemonade">Лимонад в ассортименте</option>
+                        </select>
+
+                        <label for="comment">Комментарии к заказу</label>
+                        <textarea id="comment" name="comment" rows="5"></textarea>
+                    </div>
+
+                    <div class="your-data">
+                        <h3>Ваши данные</h3>
+                        
+                        <label for="name">Имя</label>
+                        <input type="text" name="name" id="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+
+                        <div class="checkbox-field">
+                            <input type="checkbox" name="information" id="information" checked>
+                            <label for="information">Получать информацию о скидках и акциях</label>
+                        </div>
+
+                        <label for="telephone">Телефон</label>
+                        <input type="tel" name="telephone" id="telephone" required>
+
+                        <label for="address">Адрес</label>
+                        <input type="text" name="address" id="address" required>
+                        <small>Доставка осуществляется только по Москве</small>
+
+                        <label>Время доставки:</label>
+                        <div class="radio-field">
+                            <input type="radio" name="time_delivery" id="time_delivery1" value="asap" checked>
+                            <label for="time_delivery1">Как можно скорее</label>
+                        </div>
+                        
+                        <div class="radio-field">
+                            <input type="radio" name="time_delivery" id="time_delivery2" value="specific">
+                            <label for="time_delivery2">К указанному времени</label>
+                        </div>
+
+                        <label for="time">Укажите время доставки</label>
+                        <input type="time" name="time" id="time" min="07:00" max="23:00" step="300">
+                        <small>Доступное время доставки с 7:00 до 23:00</small>
+
+                        <div class="button-container">
+                            <input type="reset" value="Сбросить">
+                            <input type="submit" value="Отправить">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакты</h2>
+        <p>Адрес: г. Москва, ул. Большая Семёновская, д. 38</p>
+        <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+        <p>Email: <a href="mailto:info@obzhorkin.ru">info@obzhorkin.ru</a></p>
+        <p>Время работы: Пн-Пт с 9:00 до 18:00</p>
+    </footer>
+</body>
+</html>
